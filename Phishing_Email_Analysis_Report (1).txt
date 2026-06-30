@@ -1,0 +1,213 @@
+Project Report
+
+Task: Identify Phishing Characteristics in a Suspicious Email
+
+Student Name: Khushi Chauhan
+Branch: Computer Science Engineering (CSE)
+Semester: 5th Semester
+Project Title: Phishing Email Analysis and Detection
+Objective: Identify phishing characteristics in a suspicious email
+sample using email analysis techniques.
+
+Phishing Email Analysis Report
+
+1. Introduction
+
+Phishing is a type of cyber attack in which attackers impersonate
+legitimate organizations to steal sensitive information such as
+usernames, passwords, banking details, and OTPs. These attacks are
+usually carried out through emails that appear genuine but contain
+malicious links or attachments.
+
+The purpose of this project is to analyze a suspicious email and
+identify indicators that reveal whether it is a phishing attempt.
+
+2. Objective
+
+-   Analyze a suspicious email.
+-   Examine sender information.
+-   Inspect email headers.
+-   Detect suspicious links.
+-   Identify social engineering techniques.
+-   Find technical indicators of phishing.
+-   Prepare a detailed phishing analysis report.
+
+3. Tools Used
+
+  Tool                         Purpose
+  ---------------------------- ---------------------------
+  Gmail / Outlook              View email content
+  Free Email Header Analyzer   Analyze email headers
+  MX Toolbox Header Analyzer   Header analysis
+  Google Safe Browsing         Check suspicious URLs
+  VirusTotal                   Scan URLs and attachments
+  Browser Developer Tools      Inspect hyperlinks
+
+4. Sample Suspicious Email
+
+From: support@paypaI-security.com
+
+To: user@gmail.com
+
+Subject: Urgent: Your Account Has Been Suspended
+
+Email Body
+
+Dear Customer,
+
+We noticed unusual activity in your account.
+
+Your account has been temporarily suspended for security reasons.
+
+Please verify your account immediately by clicking the secure link
+below.
+
+Verify Now
+
+http://paypal-security-login.verify-user.info
+
+Failure to verify within 24 hours will permanently disable your account.
+
+Thank you.
+
+Security Team
+
+5. Email Header Analysis
+
+Return-Path: support@paypaI-security.com
+
+Received: from unknown-host (185.222.xxx.xxx)
+
+Authentication-Results:
+
+SPF: Fail
+
+DKIM: None
+
+DMARC: Fail
+
+Message-ID: 8hf7832hfs@gmail.com
+
+Reply-To: supportverify@gmail.com
+
+6. Phishing Indicators Found
+
+1.  Fake Sender Address Actual Sender: support@paypaI-security.com
+    Observation: The domain is paypaI-security.com. Notice the letter I
+    instead of l. This is called a homograph attack. Risk Level: High
+
+2.  Generic Greeting Email says “Dear Customer” instead of “Dear Khushi
+    Chauhan”. Risk Level: Medium
+
+3.  Sense of Urgency Words like Urgent, Immediately, Suspended, 24
+    Hours, Permanent Disable create panic. Risk Level: High
+
+4.  Suspicious URL Displayed Link: Verify Now Actual URL:
+    http://paypal-security-login.verify-user.info Problems:
+
+-   Uses HTTP instead of HTTPS
+-   Fake domain
+-   Contains extra words
+-   Not an official PayPal domain Risk Level: High
+
+5.  Reply-To Address Mismatch From: support@paypaI-security.com
+    Reply-To: supportverify@gmail.com Legitimate companies rarely use
+    Gmail for official communication. Risk Level: High
+
+6.  SPF Failure SPF: Fail Meaning: The sender is not authorized to send
+    emails from that domain. Risk Level: High
+
+7.  Missing DKIM DKIM: None Meaning: The email lacks a digital
+    signature. Risk Level: High
+
+8.  DMARC Failure DMARC: Fail Meaning: The email failed authentication
+    checks. Risk Level: High
+
+9.  Unknown IP Address Originating IP: 185.222.xxx.xxx The IP belongs to
+    an unknown hosting provider rather than the legitimate company’s
+    mail server. Risk Level: Medium
+
+10. Threatening Language Examples:
+
+-   Account suspended
+-   Verify immediately
+-   Permanent deletion Attackers use fear to manipulate victims. Risk
+    Level: Medium
+
+11. No Personal Information No Customer ID, Name, or Account Number.
+    Legitimate organizations usually personalize emails. Risk Level:
+    Medium
+
+12. Suspicious Domain Name Official Domain: paypal.com Phishing Domain:
+    paypal-security-login.verify-user.info Attackers often create
+    lookalike domains. Risk Level: High
+
+7. Social Engineering Techniques Used
+
+-   Fear
+-   Urgency
+-   Authority
+-   Fake Security Alert
+-   Account Suspension Threat
+-   Emotional Manipulation
+
+8. Technical Analysis Summary
+
+SPF: Failed DKIM: Missing DMARC: Failed HTTPS: Not Used Domain
+Reputation: Suspicious Reply-To Match: No URL Safe: No
+
+9. Risk Assessment
+
+Fake Domain – High Suspicious URL – High SPF Failure – High DKIM Missing
+– High DMARC Failure – High Urgency – High Fake Sender – High Generic
+Greeting – Medium Unknown IP – Medium
+
+Overall Risk: Critical
+
+10. Recommendations
+
+-   Never click suspicious links.
+-   Verify sender email addresses carefully.
+-   Hover over links before clicking.
+-   Enable Multi-Factor Authentication (MFA).
+-   Keep antivirus software updated.
+-   Use spam filters.
+-   Check SPF, DKIM, and DMARC authentication.
+-   Report phishing emails to the organization’s security team.
+-   Delete suspicious emails immediately.
+-   Avoid downloading unexpected attachments.
+
+11. Conclusion
+
+The analyzed email exhibits multiple strong indicators of phishing,
+including a spoofed sender address, mismatched reply-to address, failed
+SPF and DMARC checks, missing DKIM, suspicious URLs, generic greetings,
+and urgent language designed to manipulate the recipient. Based on these
+findings, the email should be classified as a phishing attempt with a
+Critical risk level. Users should avoid interacting with such messages
+and report them through appropriate security channels.
+
+12. References
+
+1.  NIST Cybersecurity Guidelines.
+2.  OWASP Phishing Prevention Cheat Sheet.
+3.  Google Safe Browsing.
+4.  VirusTotal.
+5.  MXToolbox Email Header Analyzer.
+6.  Microsoft Security – Phishing Awareness.
+7.  Google Gmail Security Documentation.
+
+Expected Deliverable (Summary)
+
+-   Fake sender address: Found
+-   Generic greeting: Found
+-   Urgent language: Found
+-   Suspicious URL: Found
+-   HTTP instead of HTTPS: Found
+-   Reply-To mismatch: Found
+-   SPF failure: Found
+-   DKIM missing: Found
+-   DMARC failure: Found
+-   Unknown sending IP: Found
+-   Threatening language: Found
+-   Overall verdict: Phishing Email (Critical Risk)
